@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E71AAD7A1FCF030B00E09DEE /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71AAD791FCF030B00E09DEE /* Model.swift */; };
+		E71AAD7C1FCF034700E09DEE /* OGLController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71AAD7B1FCF034700E09DEE /* OGLController.swift */; };
 		E75622321FCEE55E000E5E6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75622311FCEE55E000E5E6C /* AppDelegate.swift */; };
 		E75622341FCEE55E000E5E6C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75622331FCEE55E000E5E6C /* ViewController.swift */; };
 		E75622371FCEE55E000E5E6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E75622351FCEE55E000E5E6C /* Main.storyboard */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E71AAD791FCF030B00E09DEE /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		E71AAD7B1FCF034700E09DEE /* OGLController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OGLController.swift; sourceTree = "<group>"; };
 		E756222E1FCEE55E000E5E6C /* OpenGL_Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenGL_Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E75622311FCEE55E000E5E6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E75622331FCEE55E000E5E6C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +39,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E71AAD7D1FCF036C00E09DEE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E75622331FCEE55E000E5E6C /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		E71AAD7E1FCF037E00E09DEE /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E71AAD7B1FCF034700E09DEE /* OGLController.swift */,
+				E75622311FCEE55E000E5E6C /* AppDelegate.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		E71AAD7F1FCF039400E09DEE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E71AAD791FCF030B00E09DEE /* Model.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		E75622251FCEE55E000E5E6C = {
 			isa = PBXGroup;
 			children = (
@@ -54,8 +83,9 @@
 		E75622301FCEE55E000E5E6C /* OpenGL_Test */ = {
 			isa = PBXGroup;
 			children = (
-				E75622311FCEE55E000E5E6C /* AppDelegate.swift */,
-				E75622331FCEE55E000E5E6C /* ViewController.swift */,
+				E71AAD7F1FCF039400E09DEE /* Models */,
+				E71AAD7E1FCF037E00E09DEE /* Helpers */,
+				E71AAD7D1FCF036C00E09DEE /* Controllers */,
 				E75622351FCEE55E000E5E6C /* Main.storyboard */,
 				E75622381FCEE55E000E5E6C /* Assets.xcassets */,
 				E756223A1FCEE55E000E5E6C /* LaunchScreen.storyboard */,
@@ -136,6 +166,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E71AAD7C1FCF034700E09DEE /* OGLController.swift in Sources */,
+				E71AAD7A1FCF030B00E09DEE /* Model.swift in Sources */,
 				E75622341FCEE55E000E5E6C /* ViewController.swift in Sources */,
 				E75622321FCEE55E000E5E6C /* AppDelegate.swift in Sources */,
 			);
@@ -211,7 +243,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -262,7 +294,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

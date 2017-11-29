@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +14,62 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="OpenGL_Test" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <glkView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" enableSetNeedsDisplay="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EOM-ey-Pde">
+                                <rect key="frame" x="0.0" y="44" width="375" height="649.66666666666663"/>
+                            </glkView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pJf-Jg-e36">
+                                <rect key="frame" x="16" y="709.66666666666663" width="38" height="30"/>
+                                <state key="normal" title="Open"/>
+                                <connections>
+                                    <action selector="openBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZTf-EF-Zea"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ldo-GQ-cM9">
+                                <rect key="frame" x="170" y="709.66666666666663" width="34" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g1Z-VC-Utz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hxA-Vu-Avy">
+                                <rect key="frame" x="320" y="709.66666666666663" width="39" height="30"/>
+                                <state key="normal" title="Mode"/>
+                                <connections>
+                                    <action selector="modeBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gj7-Wr-nLK"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="hxA-Vu-Avy" firstAttribute="top" secondItem="EOM-ey-Pde" secondAttribute="bottom" constant="16" id="1uo-gG-sHM"/>
+                            <constraint firstItem="EOM-ey-Pde" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="8:10" id="BM4-BE-6ce"/>
+                            <constraint firstItem="EOM-ey-Pde" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Bln-7b-Xqk"/>
+                            <constraint firstItem="EOM-ey-Pde" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="EgX-13-mHG"/>
+                            <constraint firstItem="hxA-Vu-Avy" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Ldo-GQ-cM9" secondAttribute="trailing" constant="16" id="HYZ-ZK-dNd"/>
+                            <constraint firstItem="pJf-Jg-e36" firstAttribute="top" secondItem="EOM-ey-Pde" secondAttribute="bottom" constant="16" id="M7B-uM-04F"/>
+                            <constraint firstItem="pJf-Jg-e36" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="N1K-JN-WIm"/>
+                            <constraint firstItem="Ldo-GQ-cM9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="pJf-Jg-e36" secondAttribute="trailing" constant="8" id="UNU-QV-Uik"/>
+                            <constraint firstItem="Ldo-GQ-cM9" firstAttribute="centerX" secondItem="EOM-ey-Pde" secondAttribute="centerX" id="ZkU-c5-hp3"/>
+                            <constraint firstItem="hxA-Vu-Avy" firstAttribute="centerY" secondItem="Ldo-GQ-cM9" secondAttribute="centerY" id="eWV-Ax-LjB"/>
+                            <constraint firstItem="EOM-ey-Pde" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mhg-Ej-nJl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hxA-Vu-Avy" secondAttribute="trailing" constant="16" id="ox0-2L-feJ"/>
+                            <constraint firstItem="Ldo-GQ-cM9" firstAttribute="top" secondItem="EOM-ey-Pde" secondAttribute="bottom" constant="16" id="sh2-Kd-Od9"/>
+                            <constraint firstItem="pJf-Jg-e36" firstAttribute="centerY" secondItem="Ldo-GQ-cM9" secondAttribute="centerY" id="xvD-KU-C0H"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="glkView" destination="EOM-ey-Pde" id="iIg-Qo-6zc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="133.59999999999999" y="133.00492610837438"/>
         </scene>
     </scenes>
 </document>
