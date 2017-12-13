@@ -29,8 +29,6 @@ class BaseModel {
     var scaleY : Float = 1.0
     var scaleZ : Float = 1.0
     
-
-    
     init(name: String, shader: Base, vertices: [Vertex], indices: [GLubyte]) {
         self.name = name
         self.shader = shader
@@ -88,8 +86,8 @@ class BaseModel {
     }
     
     
-     func renderWithParentModelViewMatrix(_ parentModelViewMatrix: GLKMatrix4 = GLKMatrix4Identity) {
-        let modelViewMatrix : GLKMatrix4 = GLKMatrix4Multiply(parentModelViewMatrix, modelMatrix())
+    func renderWithParentModelViewMatrix(_ parentModelViewMatrix: GLKMatrix4 = GLKMatrix4Identity) {
+        let modelViewMatrix : GLKMatrix4 = GLKMatrix4Multiply(parentModelViewMatrix, generateModelMatrix())
         shader.modelViewMatrix = modelViewMatrix
         shader.prepareToDraw()
         glBindVertexArrayOES(vao)
@@ -101,7 +99,7 @@ class BaseModel {
         return UnsafeRawPointer(bitPattern: n)
     }
     
-    func modelMatrix() -> GLKMatrix4 {
+    func generateModelMatrix() -> GLKMatrix4 {
         var modelMatrix : GLKMatrix4 = GLKMatrix4Identity
         modelMatrix = GLKMatrix4Translate(modelMatrix, self.position.x, self.position.y, self.position.z)
         modelMatrix = GLKMatrix4Rotate(modelMatrix, self.rotationX, 1, 0, 0)

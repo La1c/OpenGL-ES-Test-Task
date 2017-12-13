@@ -242,7 +242,6 @@ extension ViewController:GLKViewDelegate{
     func glkView(_ view: GLKView, drawIn rect: CGRect) {
         fillWithColor(r: 0.0, g: 0.0, b: 0.0, a: 1.0)
         let lastCall = drawCalls.popLast()
-        //for call in drawCalls {
         if let call = lastCall{
             call()
         }
@@ -259,7 +258,6 @@ extension ViewController : UIGestureRecognizerDelegate{
             
             if let img = model.image{
                 let windowScale = Float(min((glkView.bounds.width / img.size.width), (glkView.bounds.height / img.size.height)))
-               // if locationInRectangle(location: beganLocation, rectangle: rect){
                     let translation = gestureRecognizer.translation(in: self.glkView)
                     print("translation \(translation)")
                     let newPosition = GLKVector3Make(selectedObject.position.x + Float(translation.x - lastTranslation.x) / windowScale,
@@ -276,7 +274,6 @@ extension ViewController : UIGestureRecognizerDelegate{
                         self.picture.renderWithParentModelViewMatrix()
                     }
                     glkView.setNeedsDisplay()
-                //}
             }
         }
     }
@@ -287,7 +284,7 @@ extension ViewController : UIGestureRecognizerDelegate{
         }
         if sender.state == .changed {
             if let _ = model.image {
-                selectedObject.rotationZ = square.rotationZ - (Float(sender.rotation) - lastRotation)
+                selectedObject.rotationZ = selectedObject.rotationZ - (Float(sender.rotation) - lastRotation)
                 maskFBO.drawToFramebuffer(objects: maskObjects)
                 lastRotation = Float(sender.rotation)
             }
@@ -311,6 +308,7 @@ extension ViewController : UIGestureRecognizerDelegate{
                 selectedObject.scaleX = lastScaleX * Float(sender.scale)
                 selectedObject.scaleY = lastScaleY * Float(sender.scale)
                 maskFBO.drawToFramebuffer(objects: maskObjects)
+                
                 
             }
 
@@ -337,9 +335,10 @@ extension ViewController : UIGestureRecognizerDelegate{
                 
                 
                 for object in maskObjects{
-                    //imageOrigin + height + base position (so, moving up from origin)
-                    let rectOriginY = imgOrigin.y +  CGFloat(object.position.y * windowScale) + CGFloat(object.scaleY * windowScale)
-                    let rect = CGRect(x: CGFloat(object.position.x * windowScale), y: rectOriginY,
+                    //imageOrigin + base position (so, moving up from the origin)
+                    let rectOriginY = imgOrigin.y +  CGFloat(object.position.y * windowScale)
+                    let rectOriginX = CGFloat(object.position.x * windowScale) - CGFloat(object.scaleX / 2.0 * windowScale)
+                    let rect = CGRect(x: rectOriginX, y: rectOriginY,
                                       width: CGFloat(object.scaleX * windowScale), height: CGFloat(object.scaleY * windowScale))
                     
                     print(rect)
