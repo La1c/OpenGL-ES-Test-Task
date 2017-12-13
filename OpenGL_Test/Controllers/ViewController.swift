@@ -242,7 +242,6 @@ extension ViewController:GLKViewDelegate{
     func glkView(_ view: GLKView, drawIn rect: CGRect) {
         fillWithColor(r: 0.0, g: 0.0, b: 0.0, a: 1.0)
         let lastCall = drawCalls.popLast()
-        //for call in drawCalls {
         if let call = lastCall{
             call()
         }
@@ -259,7 +258,6 @@ extension ViewController : UIGestureRecognizerDelegate{
             
             if let img = model.image{
                 let windowScale = Float(min((glkView.bounds.width / img.size.width), (glkView.bounds.height / img.size.height)))
-               // if locationInRectangle(location: beganLocation, rectangle: rect){
                     let translation = gestureRecognizer.translation(in: self.glkView)
                     print("translation \(translation)")
                     let newPosition = GLKVector3Make(selectedObject.position.x + Float(translation.x - lastTranslation.x) / windowScale,
@@ -276,7 +274,6 @@ extension ViewController : UIGestureRecognizerDelegate{
                         self.picture.renderWithParentModelViewMatrix()
                     }
                     glkView.setNeedsDisplay()
-                //}
             }
         }
     }
@@ -287,8 +284,16 @@ extension ViewController : UIGestureRecognizerDelegate{
         }
         if sender.state == .changed {
             if let _ = model.image {
+                
+                var modelMatrix : GLKMatrix4 = GLKMatrix4Identity
                 selectedObject.rotationZ = square.rotationZ - (Float(sender.rotation) - lastRotation)
+                modelMatrix = GLKMatrix4Translate(modelMatrix, selectedObject.position.x + selectedObject.scaleX / 2.0, selectedObject.position.y + selectedObject.scaleY / 2.0, 0.0)
+                modelMatrix = GLKMatrix4Rotate(modelMatrix, selectedObject.rotationZ, 0, 0, 1)
+                modelMatrix = GLKMatrix4Translate(modelMatrix, selectedObject.position.x - selectedObject.scaleX / 2.0, selectedObject.position.y - selectedObject.scaleY / 2.0, 0.0)
+                modelMatrix = GLKMatrix4Scale(modelMatrix, selectedObject.scaleX, selectedObject.scaleY, selectedObject.scaleZ)
+                selectedObject.modelMatrix = modelMatrix
                 maskFBO.drawToFramebuffer(objects: maskObjects)
+                selectedObject.modelMatrix = nil
                 lastRotation = Float(sender.rotation)
             }
             
@@ -311,6 +316,7 @@ extension ViewController : UIGestureRecognizerDelegate{
                 selectedObject.scaleX = lastScaleX * Float(sender.scale)
                 selectedObject.scaleY = lastScaleY * Float(sender.scale)
                 maskFBO.drawToFramebuffer(objects: maskObjects)
+                
                 
             }
 
