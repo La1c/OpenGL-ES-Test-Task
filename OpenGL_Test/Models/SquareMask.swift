@@ -16,10 +16,10 @@ class SquareMask:BaseModel{
     
     var rectangle: [Vertex] = [
         //x, y, z,  r, g, b, a,  u, v
-        Vertex(0.0, 0.0, 0, 1.0, 0.0, 0.0, 1.0, 0, 0),
-        Vertex(0.0,  1, 0, 1.0, 0.0, 0.0, 1.0, 0, 1),
-        Vertex(1,  1, 0, 1.0, 0.0, 0.0, 1.0, 1, 1),
-        Vertex(1, 0, 0, 1.0, 0.0, 0.0, 1.0, 1, 0)
+        Vertex(-0.5, -0.5, 0, 0.5, 0.0, 0.0, 1.0, 0, 0),
+        Vertex(-0.5,  0.5, 0, 1.0, 0.0, 0.0, 1.0, 0, 1),
+        Vertex(0.5,  0.5, 0, 1.0, 0.0, 0.0, 1.0, 1, 1),
+        Vertex(0.5, -0.5, 0, 1.0, 0.0, 0.0, 1.0, 1, 0)
     ]
     
     let indexList: [GLubyte] = [
@@ -29,7 +29,7 @@ class SquareMask:BaseModel{
     
     init(shader: Base = Base(vertexShader: "SimpleVertex.glsl", fragmentShader: "SimpleFragment.glsl")) {
         super.init(name: "MaskedSquare", shader: shader, vertices: rectangle, indices: indexList)
-        self.position = GLKVector3Make(100, 100, 0)
+        self.position = GLKVector3Make(300, 300, 0)
         self.scaleX = 500
         self.scaleY = 500
     }

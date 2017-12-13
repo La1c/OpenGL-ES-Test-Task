@@ -284,16 +284,8 @@ extension ViewController : UIGestureRecognizerDelegate{
         }
         if sender.state == .changed {
             if let _ = model.image {
-                
-                var modelMatrix : GLKMatrix4 = GLKMatrix4Identity
-                selectedObject.rotationZ = square.rotationZ - (Float(sender.rotation) - lastRotation)
-                modelMatrix = GLKMatrix4Translate(modelMatrix, selectedObject.position.x + selectedObject.scaleX / 2.0, selectedObject.position.y + selectedObject.scaleY / 2.0, 0.0)
-                modelMatrix = GLKMatrix4Rotate(modelMatrix, selectedObject.rotationZ, 0, 0, 1)
-                modelMatrix = GLKMatrix4Translate(modelMatrix, selectedObject.position.x - selectedObject.scaleX / 2.0, selectedObject.position.y - selectedObject.scaleY / 2.0, 0.0)
-                modelMatrix = GLKMatrix4Scale(modelMatrix, selectedObject.scaleX, selectedObject.scaleY, selectedObject.scaleZ)
-                selectedObject.modelMatrix = modelMatrix
+                selectedObject.rotationZ = selectedObject.rotationZ - (Float(sender.rotation) - lastRotation)
                 maskFBO.drawToFramebuffer(objects: maskObjects)
-                selectedObject.modelMatrix = nil
                 lastRotation = Float(sender.rotation)
             }
             
@@ -343,9 +335,10 @@ extension ViewController : UIGestureRecognizerDelegate{
                 
                 
                 for object in maskObjects{
-                    //imageOrigin + height + base position (so, moving up from origin)
-                    let rectOriginY = imgOrigin.y +  CGFloat(object.position.y * windowScale) + CGFloat(object.scaleY * windowScale)
-                    let rect = CGRect(x: CGFloat(object.position.x * windowScale), y: rectOriginY,
+                    //imageOrigin + base position (so, moving up from the origin)
+                    let rectOriginY = imgOrigin.y +  CGFloat(object.position.y * windowScale)
+                    let rectOriginX = CGFloat(object.position.x * windowScale) - CGFloat(object.scaleX / 2.0 * windowScale)
+                    let rect = CGRect(x: rectOriginX, y: rectOriginY,
                                       width: CGFloat(object.scaleX * windowScale), height: CGFloat(object.scaleY * windowScale))
                     
                     print(rect)

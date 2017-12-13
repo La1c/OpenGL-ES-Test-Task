@@ -21,7 +21,7 @@ class ObjectModel: BaseModel {
 
     
     override func renderWithParentModelViewMatrix(_ parentModelViewMatrix: GLKMatrix4 = GLKMatrix4Identity) {
-        let modelViewMatrix : GLKMatrix4 = GLKMatrix4Multiply(parentModelViewMatrix, modelMatrix ?? generateModelMatrix())
+        let modelViewMatrix : GLKMatrix4 = GLKMatrix4Multiply(parentModelViewMatrix, generateModelMatrix())
         complexShader.modelViewMatrix = modelViewMatrix
         complexShader.texture = self.texture
         complexShader.mask = self.mask

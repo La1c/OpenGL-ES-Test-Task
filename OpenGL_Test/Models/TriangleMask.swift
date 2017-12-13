@@ -15,9 +15,9 @@ class TriangleMask:BaseModel{
     
     let rectangle: [Vertex] = [
         //x, y, z,  r, g, b, a,  u, v
-        Vertex( 1.0, 0.0, 0, 1.0, 0.0, 0.0, 1.0, 1, 0),
-        Vertex( 1.0,  1.0, 0, 1.0, 0.0, 0.0, 1.0, 1, 1),
-        Vertex(0.0,  1.0, 0, 1.0, 0.0, 0.0, 1.0, 0, 1),
+        Vertex( 0.25, -0.75, 0, 1.0, 0.0, 0.0, 1.0, 1, 0),
+        Vertex(-0.75,  0.25, 0, 1.0, 0.0, 0.0, 1.0, 0, 1),
+        Vertex( 0.25,  0.25, 0, 1.0, 0.0, 0.0, 1.0, 1, 1)
     ]
     let indexList: [GLubyte] = [
         0, 1, 2

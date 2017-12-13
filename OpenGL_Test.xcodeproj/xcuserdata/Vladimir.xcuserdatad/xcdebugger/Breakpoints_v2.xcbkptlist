@@ -10,13 +10,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OpenGL_Test/Controllers/ViewController.swift"
-            timestampString = "534866131.037791"
+            timestampString = "534890232.775234"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "260"
             endingLineNumber = "260"
-            landmarkName = "handlePan(_:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -27,13 +27,13 @@
             condition = "translation.x &gt; 0 || translation.y &gt; 0"
             continueAfterRunningActions = "No"
             filePath = "OpenGL_Test/Controllers/ViewController.swift"
-            timestampString = "534866131.038164"
+            timestampString = "534890232.775488"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "263"
             endingLineNumber = "263"
-            landmarkName = "handlePan(_:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -43,29 +43,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OpenGL_Test/Controllers/ViewController.swift"
-            timestampString = "534866131.03839"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "365"
-            endingLineNumber = "365"
-            landmarkName = "locationInRectangle(location:rectangle:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "OpenGL_Test/Controllers/ViewController.swift"
-            timestampString = "534866131.040644"
+            timestampString = "534890232.775585"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "364"
-            endingLineNumber = "364"
-            landmarkName = "locationInRectangle(location:rectangle:)"
-            landmarkType = "7">
+            endingLineNumber = "364">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -75,13 +57,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OpenGL_Test/Controllers/ViewController.swift"
-            timestampString = "534866131.041177"
+            timestampString = "534890232.775679"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "364"
+            endingLineNumber = "364">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OpenGL_Test/Controllers/ViewController.swift"
+            timestampString = "534890232.775805"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "286"
             endingLineNumber = "286"
-            landmarkName = "handleRotationGesture(_:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -122,30 +118,14 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "OpenGL_Test/Models/TriangleMask.swift"
-            timestampString = "534704526.56385"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "rectangle"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "OpenGL_Test/Controllers/ViewController.swift"
-            timestampString = "534866131.041665"
+            timestampString = "534890232.776196"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "303"
             endingLineNumber = "303"
-            landmarkName = "handleRotationGesture(_:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
